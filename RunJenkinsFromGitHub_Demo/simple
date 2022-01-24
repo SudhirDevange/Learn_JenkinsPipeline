@@ -1,5 +1,10 @@
 pipeline {
   agent any
+  
+  options {
+    skipDefaultCheckout true
+  }
+  
   stages {
     stage ('Reading Jenkins Environment Variables') {
       steps {
