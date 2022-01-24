@@ -1,29 +1,20 @@
 pipeline {
-	agent any
-	stages {
-		stage ('Build Step') {
-				steps {
-				 echo "Build Step is running.";
-				}
-		}
-
-		stage ('Test Step') {
-			steps {
-				echo "Test step is running.";
-
-			}
-		}
-
-		stage ('QA Deploy') {
-			steps {
-				echo "QA Deploy";
-			}
-		}
-
-		stage ('Prod Deploy') {
-			steps {
-				echo 'Prod Deploy';
-			}
-		}
-	}
+  agent any
+  stages {
+    stage ('Reading Jenkins Environment Variables') {
+      steps {
+        //echo "The build number is ${env.BUILD_NUMBER}.";
+        //echo "The build ID is ${env.BUILD_ID}.";
+        //echo "The build Tag is ${env.BUILD_TAG}.";
+        //echo "The Job name is ${env.JOB_NAME}.";
+        //echo "The Job URL is ${env.JOB_URL}.";
+        echo "App is ${env.APP}";
+        echo "branch is ${env.branch}";
+        echo "Build Number is ${env.BUILD_NUMBER}";
+        echo "Java home is ${env.JAVA_HOME}";
+        echo "Path is ${env.PATH}";
+        echo "Env is ${env.ENV}";
+      }
+    }
+  }
 }
