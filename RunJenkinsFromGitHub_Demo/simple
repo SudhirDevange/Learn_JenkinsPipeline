@@ -24,7 +24,7 @@ pipeline {
         echo "Path is ${env.PATH}";
         echo "Env is ${env.ENV}";
         echo "Git User is $myGitHubCred_USR";
-        echo "Git Password is $myGitHubCred_PSW";
+        //echo "Git Password is $myGitHubCred_PSW";
       }
     }
   }
