@@ -1,6 +1,10 @@
 pipeline {
   agent any
   
+  environment {
+    myGitHubCred= credentials('MyGitHub_Cred')
+  }
+  
   options {
     skipDefaultCheckout true
   }
@@ -19,6 +23,8 @@ pipeline {
         echo "Java home is ${env.JAVA_HOME}";
         echo "Path is ${env.PATH}";
         echo "Env is ${env.ENV}";
+        echo "Git User is $myGitHubCred_USR";
+        echo "Git Password is $myGitHubCred_PSW";
       }
     }
   }
