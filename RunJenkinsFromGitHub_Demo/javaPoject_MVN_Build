@@ -1,0 +1,25 @@
+pipeline {
+	agent any
+	
+	options {
+	skipDefaultCheckout true
+	}
+
+	stages {
+		stage ('Github Repo checkout') {
+		 steps {
+			script {
+				deleteDir()
+				
+				checkout([$class: 'GitSCM',
+				branches: [[name: '*/main']],
+				userRemoteConfigs: [[url: 'https://github.com/SudhirDevange/java_helloWorld_maven.git']]])
+				}
+			}
+		}
+		
+		stage ('Build') {
+		
+		}
+	}
+}
