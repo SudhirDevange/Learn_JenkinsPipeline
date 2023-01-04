@@ -32,7 +32,7 @@
 					
 					steps {
 						echo "Builld with Gradle..."
-						bat 'gradlew.bat build'
+						gradle 'javacpp-android-gradle\gradlew.bat build'
 					}
 				}
 			}
