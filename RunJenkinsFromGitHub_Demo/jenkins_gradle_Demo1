@@ -15,7 +15,7 @@
 			  
 
 			stages {
-				stage('Checkout ${projName}') {
+				stage('Checkout ${env.projName}') {
 					agent { label 'master' }
 
 					steps {
@@ -36,7 +36,7 @@
 					agent { label 'master' }
 					
 					steps {
-						echo "Gradle build ${projName} project..."
+						echo "Gradle building ${projName} project..."
 						//bat '${projName}/gradlew.bat build'
 					}
 				}
