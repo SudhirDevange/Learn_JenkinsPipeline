@@ -27,7 +27,7 @@
 						scm: [$class: 'GitSCM',
 							branches: [[name: '*master']],
 							extensions: [[$class: 'SparseCheckoutPaths',
-							sparseCheckoutPaths: [[path: "${env.projName}"]]]],
+							sparseCheckoutPaths: [[path: 'gradle-javacpp-android']]]],
 							userRemoteConfigs: [[url: 'https:github.combytedecosample-projects.git']]]
 					}
 				}
