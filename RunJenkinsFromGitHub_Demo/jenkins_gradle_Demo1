@@ -1,9 +1,9 @@
 		pipeline {
 			agent none
 
-			tools {
-				gradle 'Gradle_7.6'
-			}
+			//tools {
+			//	gradle 'Gradle_7.6'
+			//}
 
 			options {
 				skipDefaultCheckout true
