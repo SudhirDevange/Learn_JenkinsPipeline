@@ -21,14 +21,14 @@ pipeline {
 		steps {
 			deleteDir()
 			
-			echo "Checkout ${env.projName}..."
+			echo "Checkout ${env.App}..."
 
 			checkout changelog: false,
 			poll: false,
 			scm: [$class: 'GitSCM',
 				branches: [[name: '*master']],
 				extensions: [[$class: 'SparseCheckoutPaths',
-				sparseCheckoutPaths: [[path: "${env.projName}"]]]],
+				sparseCheckoutPaths: [[path: "${env.App}"]]]],
 				userRemoteConfigs: [[url:'https://github.com/bytedeco/sample-projects.git']]]
 			}
 		}
@@ -37,8 +37,8 @@ pipeline {
 			agent { label 'master' }
 					
 			steps {
-				echo "Gradle building ${env.projName} project..."
-				bat "${env.projName}/gradlew.bat build"
+				echo "Gradle building ${env.App} project..."
+				bat "${env.App}/gradlew.bat build"
 			}
 		}
 	}
