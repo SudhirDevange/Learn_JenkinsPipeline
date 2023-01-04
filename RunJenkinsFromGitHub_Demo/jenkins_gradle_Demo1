@@ -13,13 +13,13 @@ pipeline {
 				deleteDir()
 				echo "Checkout javacpp-android-gradle..."
 
-				//checkout changelog: false,
-				//poll: false,
-				//scm: [$class: 'GitSCM',
-				//	  branches: [[name: '*/master']],
-				//	  extensions: [[$class: 'SparseCheckoutPaths',
-	      		//	  sparseCheckoutPaths: [[path: 'javacpp-android-gradle']]]],
-	      		//	  userRemoteConfigs: [[url: 'https://github.com/bytedeco/sample-projects.git']]]
+				checkout changelog: false,
+				poll: false,
+				scm: [$class: 'GitSCM',
+					  branches: [[name: '*/master']],
+					  extensions: [[$class: 'SparseCheckoutPaths',
+	      			  sparseCheckoutPaths: [[path: 'javacpp-android-gradle']]]],
+	      			  userRemoteConfigs: [[url: 'https://github.com/bytedeco/sample-projects.git']]]
 			}
 		}
 	}
