@@ -27,8 +27,8 @@
 						scm: [$class: 'GitSCM',
 							branches: [[name: '*master']],
 							extensions: [[$class: 'SparseCheckoutPaths',
-							sparseCheckoutPaths: [[path: 'gradle-javacpp-android']]]],
-							userRemoteConfigs: [[url: 'https:github.combytedecosample-projects.git']]]
+							sparseCheckoutPaths: [[path: "${env.projName}"]]]],
+							userRemoteConfigs: [[url:'https://github.com/bytedeco/sample-projects.git']]]
 					}
 				}
 
@@ -37,7 +37,7 @@
 					
 					steps {
 						echo "Gradle building ${env.projName} project..."
-						bat "${projName}/gradlew.bat build"
+						bat "${env.projName}/gradlew.bat build"
 					}
 				}
 			}
