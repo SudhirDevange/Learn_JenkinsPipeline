@@ -31,8 +31,8 @@
 					agent { label 'master' }
 					
 					steps {
-						echo "Builld with Gradle..."
-						gradle 'javacpp-android-gradle\gradlew.bat build'
+						echo "Build with Gradle..."
+						bat 'javacpp-android-gradle/gradlew.bat build'
 					}
 				}
 			}
