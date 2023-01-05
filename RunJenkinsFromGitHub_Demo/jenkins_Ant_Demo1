@@ -10,6 +10,7 @@ pipeline {
 		stage("Ant Job") {
 			steps {
 				cleanWs()
+				echo "Running ANT build..."
 				bat "ant -version"
 			}
 		}
