@@ -3,12 +3,13 @@ pipeline {
 
 	options {
   	skipDefaultCheckout true
+
 	}
 
 	stages {
 		stage("Checkout build-tool-overkill") {
 			steps {
-				
+				deleteDir()
 				echo "Running ANT build..."
 				bat "ant -version"
 
@@ -19,7 +20,7 @@ pipeline {
 				scm: [$class: 'GitSCM',
 					branches: [[name: '*/master']],
 					extensions: [],
-					userRemoteConfigs: [[url: 'https://github.com/hannotify/build-tool-overkill']]]
+					userRemoteConfigs: [[url: 'https://github.com/davemilligan/spring-3.2.1-mvc-antbuild']]]
 			}
 		}
 
