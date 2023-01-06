@@ -23,10 +23,10 @@ pipeline {
 			}
 		}
 
-		stage("Build") {
+		stage("Build with Ant") {
 			steps {
-				echo "Build build-tool-overkill with Ant..."
-				
+				echo "Build project 'build-tool-overkill' with Ant..."
+				bat 'ant build'		
 			}
 		}
 	}
