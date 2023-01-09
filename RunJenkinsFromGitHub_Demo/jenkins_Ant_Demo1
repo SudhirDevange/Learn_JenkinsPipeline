@@ -7,7 +7,7 @@ pipeline {
 	}
 
 	stages {
-		stage("Checkout build-tool-overkill") {
+		stage("Checkout") {
 			steps {
 				deleteDir()
 				echo "Running ANT build..."
@@ -20,7 +20,7 @@ pipeline {
 				scm: [$class: 'GitSCM',
 					branches: [[name: '*/master']],
 					extensions: [],
-					userRemoteConfigs: [[url: 'https://github.com/davemilligan/spring-3.2.1-mvc-antbuild']]]
+					userRemoteConfigs: [[url: 'https://github.com/ualhmis/connect-four.git']]]
 			}
 		}
 
