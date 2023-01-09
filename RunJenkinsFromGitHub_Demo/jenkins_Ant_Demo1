@@ -7,7 +7,7 @@ pipeline {
 	}
 
 	stages {
-		stage("Checkout") {
+		stage("Checkout build-tool-overkill") {
 			steps {
 				deleteDir()
 				echo "Running ANT build..."
@@ -30,5 +30,17 @@ pipeline {
 				bat 'ant build'		
 			}
 		}
+	}
+}
+
+post {
+	always {
+		echo "This will always run..."
+	}
+	failure {
+		echo "Your build failed..."
+	}
+	success {
+		echo "Your build succeeded..."
 	}
 }
