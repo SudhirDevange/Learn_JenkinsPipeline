@@ -20,7 +20,7 @@ pipeline {
 				scm: [$class: 'GitSCM',
 					branches: [[name: '*/master']],
 					extensions: [],
-					userRemoteConfigs: [[url: 'https://github.com/ualhmis/connect-four.git']]]
+					userRemoteConfigs: [[url: 'https://github.com/nk2164/Ant-Project.git']]]
 			}
 		}
 
