@@ -13,7 +13,7 @@ pipeline {
   stages {
     stage("Test") {
       when {
-        environment(name:"${params.Gender}", value:"Male")
+        expression(name:"${params.Gender}", value:"Male")
       }
 
       steps {
