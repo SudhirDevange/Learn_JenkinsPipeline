@@ -1,0 +1,17 @@
+pipeline {
+  agent any
+
+  parameters {
+    string(name:"Name", description:"Name of the person")
+    choice(name:"Gender", choices:["Male","Female"], description:"Gender of the person")
+  }
+
+  stages {
+    stage("Test") {
+      steps {
+        echo "${params.Name}"
+        echo "${params.Gender}"
+      }
+    }
+  }
+}
