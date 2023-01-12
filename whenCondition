@@ -1,6 +1,10 @@
 pipeline {
   agent any
 
+  options {
+  skipDefaultCheckout true
+  }
+
   parameters {
     string(name:"Name", description:"Name of the person")
     choice(name:"Gender", choices:["Male","Female"], description:"Gender of the person")
@@ -8,6 +12,10 @@ pipeline {
 
   stages {
     stage("Test") {
+      when {
+        environment(name:"${params.Gender}", value:"Male")
+      }
+
       steps {
         echo "${params.Name}"
         echo "${params.Gender}"
