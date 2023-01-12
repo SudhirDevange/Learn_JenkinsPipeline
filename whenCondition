@@ -29,7 +29,7 @@ pipeline {
 
       steps {
         echo "Hello Mrs. ${params.Name}"
-        echho "${params.Gender}"
+        echo "${params.Gender}"
       }
     }
   }
