@@ -11,14 +11,25 @@ pipeline {
   }
 
   stages {
-    stage("Test") {
+    stage("Male Stage") {
       when {
         expression{ return params.Gender=="Male" }
       }
 
       steps {
-        echo "${params.Name}"
+        echo "Hello Mr. ${params.Name}"
         echo "${params.Gender}"
+      }
+    }
+
+    stage("Female Stage"){
+      when {
+        expression{return params.Gender=="Female"}
+      }
+
+      steps {
+        echo "Hello Mrs. ${params.Name}"
+        echho "${params.Gender}"
       }
     }
   }
